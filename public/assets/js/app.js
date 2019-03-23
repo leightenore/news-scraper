@@ -5,7 +5,7 @@ $.get("/articles", function (data) {
     $("#articles").empty();
 
     for (var i = 0; i < data.length; i++) {
-      $("#articles").append("<p data-id='" + data[i]._id + "'><ul><li><a href='" + data[i].link + "'>" + data[i].title + "</a></p><button class='btn btn-primary' id='savebtn'>Save Article</button></li></ul>");
+      $("#articles").append("<p data-id='" + data[i]._id + "'><ul><li><a target='_blank' href='" + data[i].link + "'>" + data[i].title + "</a></p><button class='btn btn-primary' id='savebtn'>Save Article</button></li></ul>");
     }
   }
 });
