@@ -1,17 +1,31 @@
-$.get("/articles", function(data) {
-  $("#articles").empty();
-  for (var i = 0; i < data.length; i++) {
-    $("#articles").append("<p data-id='" + data[i]._id + "'><ul><li><a href='" + data[i].link + "'>" + data[i].title + "</a></li></ul></p>");
+$.get("/articles", function (data) {
+  if (data.length === 0) {
+    return;
+  } else {
+    $("#articles").empty();
+
+    for (var i = 0; i < data.length; i++) {
+      $("#articles").append("<p data-id='" + data[i]._id + "'><ul><li><a href='" + data[i].link + "'>" + data[i].title + "</a></p><button class='btn btn-primary' id='savebtn'>Save Article</button></li></ul>");
+    }
   }
 });
 
-// $.get("/delete", function(data) {
-//   $("#articles").empty();
-// })
+$(document).on("click", "#savebtn", function () {
+  // this.data.saved = true;
+  console.log(this);
+  //want to change the saved property of the article to true when you click corresponding button
+})
 
+$(document).on("click", "#saved", function () {
+  $.get("/articles/saved", function (data) {
+    $("#articles").empty();
 
-  
-  
+    for (var i = 0; i < data.length; i++) {
+      $("#articles").append("<p data-id='" + data[i]._id + "'><ul><li><a href='" + data[i].link + "'>" + data[i].title + "</a></p></li></ul>");
+    }
+  });
+});
+
 //   // Whenever someone clicks a p tag
 // $(document).on("click", "p", function() {
 //   // Empty the notes from the note section

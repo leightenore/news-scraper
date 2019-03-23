@@ -62,7 +62,7 @@ app.get("/scrape", function (req, res) {
                 });
         });
 
-        res.send("Scrape Complete");
+        res.redirect("/");
     });
 });
 
@@ -79,16 +79,29 @@ app.get("/articles", function (req, res) {
 });
 
 // Route to delete scraped articles
-app.get("/delete", function(req, res) {
-    db.Article.remove({}, function(err) { 
-    if (err) throw err;
+app.get("/delete", function (req, res) {
+    db.Article.remove({}, function (err) {
+        if (err) throw err;
     })
-    .then(function(result) {
-        console.log("Articles Deleted");
-    })
-    .catch(function(err) {
-      res.json(err);
-    });
+        .then(function (result) {
+            console.log("Articles Deleted");
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+    res.redirect("/");
+});
+
+//Route for saved articles
+app.get("/articles/saved", function (req, res) {
+    db.Article.find({ saved : true })
+        .then(function (dbArticle) {
+            res.json(dbArticle);
+            console.log(dbArticle);
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
 });
 
 // Route for grabbing a specific Article by id with it's note

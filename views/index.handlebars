@@ -6,9 +6,17 @@
         </div>
     </div>
     <nav class="navbar navbar-dark bg-primary shadow-sm">
+        <ul class="nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="saved">Saved</a>
+            </li>
+        </ul>
         <ul class="nav ml-auto">
-            <li><a href="/scrape"><button class="btn btn-light">Scrape New
-                        Articles</button></a></li>
+            <li><a href="/scrape"><button class="btn btn-light ml-auto">Scrape New Articles</button></a>
+            <a href="/delete"><button class="btn btn-light ml-auto">Clear Articles</button></a></li>
         </ul>
     </nav>
     <div id="article-section" class="shadow-lg">
@@ -18,7 +26,8 @@
         </center>
         <hr>
         <div id="articles">
-            <center><div id="nothing">There's Nothing Here! <br>Click the "Scrape New Articles" Button Above!</div>
+            <center>
+                <div id="nothing">There's Nothing Here! <br>Click the "Scrape New Articles" Button Above!</div>
             </center>
         </div>
 

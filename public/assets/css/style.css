@@ -11,6 +11,15 @@ body {
     margin-bottom: 0px;
 }
 
+.nav-link {
+    padding: 0px 10px;
+    color: white;
+}
+
+.nav-link:hover {
+    color: rgb(218, 218, 218);
+}
+
 h1{
     font-size: 5rem;
 }
@@ -25,7 +34,7 @@ h2{
     padding: 30px 0px;
 }
 
-#clearbtn {
+#commentbtn {
     margin-left: 10px;
 }
 
