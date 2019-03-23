@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(192, 192, 192);
+    font-family: 'Vidaloka', serif;
+}
+
+.jumbotron {
+    background: url(../images/newpapers.jpg);
+    font-family: 'Special Elite', cursive;
+    color: white;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+h1{
+    font-size: 5rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+#header {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: -65px 0px;
+    padding: 30px 0px;
+}
+
+#clearbtn {
+    margin-left: 10px;
+}
+
+#article-section {
+    background-color: white;
+}
+
+#articles {
+    padding: 0px 50px 75px 50px;
+    margin-bottom: 50px;
+}
+
+a {
+    color: black;
+    font-size: 1.5rem;
+}
+
+a:hover {
+    color: black;
+}
+
+#nothing {
+    color: rgb(170, 170, 170);
+    padding: 50px;
+}
