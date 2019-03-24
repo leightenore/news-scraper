@@ -51,6 +51,7 @@ app.get("/scrape", function (req, res) {
                 .children()
                 .attr("href");
 
+            //instead of children, do .find("h2").text()
             console.log(result);
 
             db.Article.create(result)
@@ -92,7 +93,18 @@ app.get("/delete", function (req, res) {
     res.redirect("/");
 });
 
-//Route for saved articles
+//Route for saving articles
+app.put("/articles/update", function(req, res) {
+    db.Article.findOneAndUpdate({ _id: req.body.id }, { saved : true })
+    .then(dbArticle => {
+        res.json(dbArticle);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
+
+//Route for displaying saved articles
 app.get("/articles/saved", function (req, res) {
     db.Article.find({ saved : true })
         .then(function (dbArticle) {
